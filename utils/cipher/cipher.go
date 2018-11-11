@@ -14,14 +14,14 @@ type cipher struct {
 }
 
 // 加密原数据
-func (cipher *cipher) encode(bs []byte) {
+func (cipher *cipher) Encode(bs []byte) {
 	for i, v := range bs {
 		bs[i] = cipher.encodePassword[v]
 	}
 }
 
 // 解码加密后的数据到原数据
-func (cipher *cipher) decode(bs []byte) {
+func (cipher *cipher) Decode(bs []byte) {
 	for i, v := range bs {
 		bs[i] = cipher.decodePassword[v]
 	}

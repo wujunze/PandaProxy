@@ -1,8 +1,7 @@
-package cipher
+package utils
 
 import (
 	"crypto/rand"
-	pwd "github.com/wujunze/PandaProxy/utils/password"
 	"reflect"
 	"testing"
 )
@@ -13,9 +12,9 @@ const (
 
 // 测试 cipher 加密解密
 func TestCipher(t *testing.T) {
-	password := pwd.RandPassword()
+	password := RandPassword()
 	t.Log(password)
-	p, _ := pwd.ParsePassword(password)
+	p, _ := parsePassword(password)
 	cipher := newCipher(p)
 	// 原数据
 	org := make([]byte, passwordLength)
@@ -38,8 +37,8 @@ func TestCipher(t *testing.T) {
 }
 
 func BenchmarkEncode(b *testing.B) {
-	password := pwd.RandPassword()
-	p, _ := pwd.ParsePassword(password)
+	password := RandPassword()
+	p, _ := parsePassword(password)
 	cipher := newCipher(p)
 	bs := make([]byte, MB)
 	b.ResetTimer()
@@ -48,8 +47,8 @@ func BenchmarkEncode(b *testing.B) {
 }
 
 func BenchmarkDecode(b *testing.B) {
-	password := pwd.RandPassword()
-	p, _ := pwd.ParsePassword(password)
+	password := RandPassword()
+	p, _ := parsePassword(password)
 	cipher := newCipher(p)
 	bs := make([]byte, MB)
 	b.ResetTimer()

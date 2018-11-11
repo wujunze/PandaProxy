@@ -1,10 +1,4 @@
-package cipher
-
-
-
-const passwordLength = 256
-
-type password [passwordLength]byte
+package utils
 
 type cipher struct {
 	// 编码用的密码
@@ -14,14 +8,14 @@ type cipher struct {
 }
 
 // 加密原数据
-func (cipher *cipher) Encode(bs []byte) {
+func (cipher *cipher) encode(bs []byte) {
 	for i, v := range bs {
 		bs[i] = cipher.encodePassword[v]
 	}
 }
 
 // 解码加密后的数据到原数据
-func (cipher *cipher) Decode(bs []byte) {
+func (cipher *cipher) decode(bs []byte) {
 	for i, v := range bs {
 		bs[i] = cipher.decodePassword[v]
 	}

@@ -1,4 +1,4 @@
-package password
+package utils
 
 import (
 	"encoding/base64"
@@ -23,7 +23,7 @@ func (password *password) String() string {
 }
 
 // 解析采用base64编码的字符串获取密码
-func ParsePassword(passwordString string) (*password, error) {
+func parsePassword(passwordString string) (*password, error) {
 	bs, err := base64.StdEncoding.DecodeString(strings.TrimSpace(passwordString))
 	if err != nil || len(bs) != passwordLength {
 		return nil, errors.New("不合法的密码")

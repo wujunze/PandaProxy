@@ -1,7 +1,10 @@
 os:
-- linux
-- osx
+  - linux
+  - osx
 
 language: go
 
-script: go test -cover -bench=. -run=. ./...
+script: go test -v -covermode=count -coverprofile=coverage.out -bench=. -run=. ./...
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)

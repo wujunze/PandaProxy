@@ -1,0 +1,18 @@
+hash: dab112e338d38c570af038e5c8cb2ca8ab937aae2e1790a8ce0ec32e42975ae5
+updated: 2018-11-13T09:26:11.559383+08:00
+imports:
+- name: github.com/mitchellh/go-homedir
+  version: ae18d6b8b3205b561c79e8e5f69bff09736185f4
+- name: github.com/phayes/freeport
+  version: 95f893ade6f232a5f1511d61735d89b1ae2df543
+- name: github.com/wujunze/PandaProxy
+  version: d1d8ab1adf070101af11ab7fe218f1b992e393af
+  subpackages:
+  - PandaProxy
+  - cmd
+testImports:
+- name: golang.org/x/net
+  version: 03003ca0c849e57b6ea29a4bab8d3cb6e4d568fe
+  subpackages:
+  - internal/socks
+  - proxy

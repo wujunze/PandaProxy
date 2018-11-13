@@ -1,0 +1,10 @@
+package: .
+import:
+- package: github.com/mitchellh/go-homedir
+- package: github.com/phayes/freeport
+- package: github.com/wujunze/PandaProxy
+  subpackages:
+  - PandaProxy
+  - cmd
+testImport:
+- package: golang.org/x/net/proxy

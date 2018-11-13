@@ -1,0 +1,16 @@
+build: off
+
+platform:
+- x86
+- x64
+
+clone_folder: c:\gopath\src\github.com\wujunze\PandaProxy
+
+environment:
+  GOPATH: c:\gopath
+
+install:
+- go get ./...
+- go get golang.org/x/net/proxy
+
+test_script: go test -cover -bench=. -run=. ./...

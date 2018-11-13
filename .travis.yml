@@ -1,0 +1,7 @@
+os:
+- linux
+- osx
+
+language: go
+
+script: go test -cover -bench=. -run=. ./...
